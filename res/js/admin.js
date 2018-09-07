@@ -19,7 +19,11 @@ $(document).ready(function(){
 
                 },
                 success: function(data){
-                    console.log(data);
+                    if(data == "true"){
+                        window.location.href = "http://localhost/cms_iamgabo/admin/";
+                    }else if(data == "false"){
+                        alert("Sus credenciales no coinciden, por favor intente de nuevo");
+                    }
                 }
             });
     });

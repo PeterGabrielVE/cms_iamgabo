@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^log-out$ res/php/user_actions/logout.php [QSA]

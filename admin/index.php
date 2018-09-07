@@ -17,14 +17,20 @@
         if(
         isset($_SESSION['admin'])
         ){
-        require '../views/nav/main_nav.php'; 
+        require '../views/nav/main_nav_admin.php'; 
         }
     ?>
 
     <?php 
         if(
-            !isset($_SESSION['admin'])){
+            !isset($_SESSION['admin']))
+            {
             require '../views/admin/home.php';
+        }elseif(
+            isset($_SESSION['admin']) &&
+            !isset($_GET['section'])
+        ){
+            require '../views/admin/main.php';
         }
     ?>
 
