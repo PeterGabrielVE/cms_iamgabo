@@ -10,7 +10,7 @@
         <input type="password" class="txtPassLogin" placeholder="Contrase&ntilde;a">
     </div>   
 
-    <div class="ui basic blue button">
+    <div class="ui basic blue button btnAdminLogIn">
         Log In
     </div>
 

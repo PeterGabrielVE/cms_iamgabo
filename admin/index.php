@@ -30,5 +30,6 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
   <script src="../res/css/framework/semantic/semantic.min.js"></script>  
+  <script src="../res/js/admin.js"></script>  
 </body>
 </html>
