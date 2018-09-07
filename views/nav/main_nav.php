@@ -1,4 +1,4 @@
-<div class="ui pointing menu">
+<div class="ui pointing menu" style="margin-bottom:0">
   <a class="active item">
     Inicio
   </a>

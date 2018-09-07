@@ -9,6 +9,7 @@
     <title>CMS IAMGABO</title>
 
     <link rel="stylesheet" href="res/css/framework/semantic/semantic.min.css">
+    <link rel="stylesheet" href="res/css/main.css">
 </head>
 <body>
 
