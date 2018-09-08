@@ -43,9 +43,18 @@
             global $database;
 
             $database->insert("categories",[
-                "category" => $category 
+                "category" => htmlentities($category)
             ]);
                 return $database->id();
+        }
+
+        public function deleteCategory($category_id){
+            global $database;
+
+            $delete = $database->delete("categories",[
+                "category_id" => $category_id
+            ]);
+                return $delete->rowCount();
         }
     }
 

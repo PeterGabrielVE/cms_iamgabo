@@ -22,7 +22,7 @@
             <?php foreach($categories as $category): ?>
             <tr>
                 <td><?php echo $category['category'] ?></td>
-                <td><i class="fas fa-trash-alt btnRemovecategory" data-categoryId="<?php echo $category['category_id']; ?>" style="color:#ff2a00; cursor:pointed;" title="Eliminar Categoría"></i></td>
+                <td><i class="fas fa-trash-alt btnRemoveCategory" data-categoryId="<?php echo $category['category_id']; ?>" style="color:#ff2a00; cursor:pointed;" title="Eliminar Categoría"></i></td>
             </tr>
             <?php endforeach; ?>
         </tbody>
