@@ -27,6 +27,15 @@
               return false;
           }
         }
+
+        public function saveCategory($category){
+            global $database;
+
+            $database->insert("categories",[
+                "category" => $category 
+            ]);
+                return $database->id();
+        }
     }
 
 ?>

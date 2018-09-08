@@ -9,6 +9,7 @@
     <title>Administrador</title>
 
     <link rel="stylesheet" href="../res/css/framework/semantic/semantic.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../res/css/main.css">
 </head>
 <body>
@@ -37,6 +38,12 @@
             $_GET['section'] == "posts"
         ){
             require '../views/admin/posts.php';
+        }elseif(
+            isset($_SESSION['admin']) &&
+            isset($_GET['section']) && 
+            $_GET['section'] == "categories"
+        ){
+            require '../views/admin/categories.php';
         }
     ?>
 

@@ -31,4 +31,33 @@ $(document).ready(function(){
                 }
             });
     });
+
+    $('.btnSaveCategory').on("click", function(){
+
+        var category = $('.txtNameCategory').val().trim()
+            self = this;
+        $.ajax({
+            type: "POST",
+            url: root + "res/php/admin_actions/save_category.php",
+            data: {
+                category : category
+            },
+            beforeSend: function(){
+                $(self).addClass("loading");
+            },
+            success: function(data){
+                $(self).removeClass("loading");
+                if(data > 0){
+                    alert("Se guardo correctamente");
+                    $('.txtNameCategory').val("");
+                }else{
+                    alert("Hubo un error");
+                }
+                //console.log(data);
+            },
+            error: function(){
+                alert("Se ha producido un error");
+            }
+        });
+    });
 });

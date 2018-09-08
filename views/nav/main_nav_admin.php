@@ -2,8 +2,8 @@
   <a href="posts" class="item">
    Publicaciones
   </a>
-  <a class="item">
-    Administradores
+  <a href="categories" class="item">
+    Categorías
   </a>
 
   <div  class="right menu">
