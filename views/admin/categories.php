@@ -11,7 +11,7 @@
     <p class="clearfix"></p>
 
     <h3>Categorías Existentes</h3>
-    <table class="ui single line table">
+    <table class="ui single line table tblCategories">
         <thead>
             <tr>
             <th>Nombre de la Categoría</th>
@@ -19,12 +19,12 @@
             </tr>
         </thead>
         <tbody>
-            <?php for($i = 1; $i <= 10; $i++): ?>
+            <?php foreach($categories as $category): ?>
             <tr>
-                <td>Nombre</td>
-                <td><i class="fas fa-trash-alt" style="color:#ff2a00; cursor:pointed;" title="Eliminar Categoría"></i></td>
+                <td><?php echo $category['category'] ?></td>
+                <td><i class="fas fa-trash-alt btnRemovecategory" data-categoryId="<?php echo $category['category_id']; ?>" style="color:#ff2a00; cursor:pointed;" title="Eliminar Categoría"></i></td>
             </tr>
-            <?php endfor; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>

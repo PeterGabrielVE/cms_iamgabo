@@ -28,6 +28,17 @@
           }
         }
 
+        public function getCategories(){
+            global $database;
+
+            $categories = $database->select("Categories",[
+                "category_id",
+                "category"
+            ]);
+            return $categories;
+        }
+
+
         public function saveCategory($category){
             global $database;
 

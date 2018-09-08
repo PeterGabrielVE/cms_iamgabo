@@ -50,6 +50,8 @@ $(document).ready(function(){
                 if(data > 0){
                     alert("Se guardo correctamente");
                     $('.txtNameCategory').val("");
+
+                    $('.tblCategories tr:last').after('<tr><td>' + category + '</td><td><i class="fas fa-trash-alt btnRemovecategory" data-categoryId="'+data+'" style="color:#ff2a00; cursor:pointed;" title="Eliminar Categoría"></i></td></tr>');
                 }else{
                     alert("Hubo un error");
                 }
