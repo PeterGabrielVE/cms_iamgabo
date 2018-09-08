@@ -62,4 +62,32 @@ $(document).ready(function(){
             }
         });
     });
+
+    $(".tblCategories").on("click",".btnRemoveCategory", function(){
+        var category_id = $(this).attr("data-categoryId"),
+        self            = this;
+        
+        //console.log(category_id);
+        $.ajax({
+            type: "POST",
+            url: root + "res/php/admin_actions/delete_category.php",
+            data: {
+                category_id : category_id
+            },
+            success: function(data){
+               if( data >0){
+                $(self).parent().parent().remove();
+                alert("Se ha eliminado");
+               }else{
+                alert("Se ha producido un error");
+               }
+               
+            },
+            error: function(){
+                alert("Se ha producido un error");
+            }
+        });
+
+    });
+
 });
