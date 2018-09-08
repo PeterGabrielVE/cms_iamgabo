@@ -9,8 +9,11 @@
     <div class="field">
         <select class="txtCategoryPost" name="txtCategoryPost">
             <option value="0">-- SELECCIONAR UNA CATEGORIA -- </option>
-            <option value="1"></option>
-            <option value="2"></option>
+            
+            <?php foreach($categories as $category): ?>
+            <option value="<?php echo $category['category_id']; ?>"><?php echo $category['category']; ?></option>
+            <?php endforeach; ?>
+
         </select>
     </div>
 
@@ -22,7 +25,7 @@
     <p><b>Publicaci&oacute;n</b></p>
     <textarea name="txtDescripcion" id="txtDescripcion" ></textarea>
 
-    <button class="ui button ">Subir Publicación</button>
+    <button class="ui blue basic button btnSavePost ">Subir Publicación</button>
     <p class="clearfix"></p>
 </form>
 
