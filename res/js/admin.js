@@ -87,7 +87,18 @@ $(document).ready(function(){
                 alert("Se ha producido un error");
             }
         });
+    });
+
+    $('.btnSavePost').on("click",function(e){
+        e.preventDefault();
+        var description = CKEDITOR.instances.txtDescripcion.getData(),
+        name = $('.txtNamePost').val().trim();
+        ;
+        
+        
+        //console.log(description);
 
     });
+
 
 });
