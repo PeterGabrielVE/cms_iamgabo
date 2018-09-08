@@ -2,6 +2,10 @@ $(document).ready(function(){
 
     var root = "http://localhost/cms_iamgabo/";
 
+    try{
+        CKEDITOR.replace('txtDescripcion');
+    }catch(e){}
+
     //Log In
     $(".btnAdminLogIn").on("click",function(){
         var email = $(".txtEmailLogin").val().trim(),

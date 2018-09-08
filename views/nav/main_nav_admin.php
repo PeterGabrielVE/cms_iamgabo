@@ -1,5 +1,5 @@
-<div class="ui pointing menu" style="margin-bottom:0">
-  <a class="active item">
+<div class="ui pointing menu" style="margin-bottom: 0px;">
+  <a href="posts" class="item">
    Publicaciones
   </a>
   <a class="item">
