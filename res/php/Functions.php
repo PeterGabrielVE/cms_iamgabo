@@ -28,6 +28,19 @@
           }
         }
 
+        
+        public function getProfile($email){
+            global $database;
+
+            $admin = $database->select("admins",[
+                "admin_id",
+                "username"
+            ], [
+                "email" => $email
+            ]);
+            return $admin;
+        }
+
         public function getCategories(){
             global $database;
 
@@ -37,6 +50,8 @@
             ]);
             return $categories;
         }
+
+
 
 
         public function saveCategory($category){
@@ -56,6 +71,22 @@
             ]);
                 return $delete->rowCount();
         }
+
+        public function savePost($name, $category_id, $description, $name_img, $admin_id){
+            global $database;
+
+            $database->insert("posts",[
+                "name" => htmlentities($name),
+                "body" => htmlentities($description),
+                "img_post" => $name_img,
+                "category_id" => htmlentities($category_id),
+                "admin_id" => $admin_id,
+                "created_at" => time()
+
+            ]);
+                return $database->id();
+        }
+
     }
 
 ?>

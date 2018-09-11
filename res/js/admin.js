@@ -3,7 +3,7 @@ $(document).ready(function(){
     var root = "http://localhost/cms_iamgabo/";
 
     try{
-        CKEDITOR.replace('txtDescripcion');
+        CKEDITOR.replace('txtDescription');
     }catch(e){}
 
     //Log In
@@ -91,7 +91,7 @@ $(document).ready(function(){
 
     $('.btnSavePost').on("click",function(e){
         e.preventDefault();
-        var description = CKEDITOR.instances.txtDescripcion.getData(),
+        var description = CKEDITOR.instances.txtDescription.getData(),
         name            = $('.txtNamePost').val().trim(),
         category_id     = $('.txtCategoryPost').val().trim();
         
@@ -99,10 +99,10 @@ $(document).ready(function(){
             
             //Ajax para subir publicacion
             var formData = new FormData($('#new_post_container')[0]);
-            formData.append("descripcion",description);
+            formData.append("description",description);
 
             $.ajax({
-                xhr:function(){
+                xhr: function(){
                     var xhr = new window.XMLHttpRequest();
 
                     xhr.upload.addEventListener("progress", function(evt){
@@ -124,7 +124,11 @@ $(document).ready(function(){
                 beforeSend: function(){
                     //nada
                 },
-                success: function(){
+                success: function(data){
+                    //console.log(data);
+                    
+                    $('.txtNamePost, .img_file').val("");
+                    CKEDITOR.instances['txtDescription'].setData("");
                     alert("Se subio la publicacion");
                 },
                 error: function(){
