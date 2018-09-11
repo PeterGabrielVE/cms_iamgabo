@@ -92,10 +92,51 @@ $(document).ready(function(){
     $('.btnSavePost').on("click",function(e){
         e.preventDefault();
         var description = CKEDITOR.instances.txtDescripcion.getData(),
-        name = $('.txtNamePost').val().trim();
-        ;
+        name            = $('.txtNamePost').val().trim(),
+        category_id     = $('.txtCategoryPost').val().trim();
         
-        
+        if( description !=="" && name !=="" && category_id >0){
+            
+            //Ajax para subir publicacion
+            var formData = new FormData($('#new_post_container')[0]);
+            formData.append("descripcion",description);
+
+            $.ajax({
+                xhr:function(){
+                    var xhr = new window.XMLHttpRequest();
+
+                    xhr.upload.addEventListener("progress", function(evt){
+                        if(evt.lengthComputable){
+                            var percentComplete = evt.loaded / evt.total;
+                            percentComplete = parseInt(percentComplete * 100);
+
+                            console.log(percentComplete);
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                type: "POST",
+                url: root + "res/php/admin_actions/new_post.php",
+                data: formData,
+                processData:false,
+                contentType:false,
+                beforeSend: function(){
+                    //nada
+                },
+                success: function(){
+                    alert("Se subio la publicacion");
+                },
+                error: function(){
+                    alert("Error.....");
+                }
+
+            });
+
+
+        }else{
+            alert("Llenar todos los campos, por favor");
+        }
         //console.log(description);
 
     });
