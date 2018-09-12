@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CMS IAMGABO</title>
 
-    <link rel="stylesheet" href="res/css/framework/semantic/semantic.min.css">
-    <link rel="stylesheet" href="res/css/main.css">
+    <link rel="stylesheet" href="http://localhost/cms_iamgabo/res/css/framework/semantic/semantic.min.css">
+    <link rel="stylesheet" href="http://localhost/cms_iamgabo/res/css/main.css">
 </head>
 <body>
 
@@ -18,6 +18,11 @@
     <?php 
         if(!isset($_GET['section'])){
             require 'views/home.php';
+        }elseif(
+            isset($_GET['section']) && 
+            $_GET['section'] == "post"
+        ){
+            require 'views/post.php';
         }
     ?>
 

@@ -19,6 +19,27 @@
             return $posts;
         }
 
+        public function getPostInfo($post_id){
+            global $database;
+
+            $posts = $database -> select("posts", [
+                "[>]categories" => ["category_id" => "category_id"],
+                "[>]admins" => ["admin_id" => "admin_id"],
+            ],
+             [
+                "posts.name",
+                "posts.body",
+                "posts.img_post",
+                "posts.created_at",
+                "categories.category",
+                "admins.username"
+            ], [
+                "posts.post_id" => $post_id
+            ]);
+
+            return $posts;
+        }
+
     };
 
     class Admin_Actions{
@@ -101,6 +122,8 @@
             ]);
                 return $database->id();
         }
+
+
 
     }
 
