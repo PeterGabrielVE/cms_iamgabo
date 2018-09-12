@@ -10,7 +10,7 @@
     <a class="item">
       Iniciar Sesión
     </a>
-    <a class="item">
+    <a href="http://localhost/cms_iamgabo/register" class="item">
       Registrarme
     </a>
   </div>

@@ -9,6 +9,7 @@ RewriteRule ^admin/categories$ admin/index.php?section=categories [QSA]
 
 #Rutas Usuarios
 RewriteRule ^post/([0-9]+)$ index.php?section=post&post_id=$1 [QSA]
+RewriteRule ^register$ index.php?section=register [QSA]
 
 
 <IfModule mod_expires.c> 

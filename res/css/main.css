@@ -51,9 +51,10 @@ body{
 }
 
 
+
 /* LOGIN ADMIN */
 
-.login_container{
+.login_container, .register_container{
     width: 30%;
     margin: 50px auto;
     border: 1px solid #666;
@@ -62,23 +63,28 @@ body{
     padding: 15px;
 }
 
-.login_container > h2{
+.login_container > h2,
+.register_container > h2{
     text-align: center;
 
 }
 
-.login_container > p{
+.login_container > p,
+.register_container > p{
     margin-bottom:0px;
     margin-top:10px;
 }
 
 .login_container > .input,
-.login_container > .input > .txtEmailLogin{
+.login_container > .input > .txtEmailLogin,
+.register_container > .input,
+.register_container > .input > .txtEmailRegister{
     width: 100%;
 }
 
 
-.login_container > .button{
+.login_container > .button,
+.register_container > .button{
 
     margin-top: 15px;
 }
@@ -101,10 +107,6 @@ body{
 .new_post_container .button{
      margin-top: 15px !important;
     float: right;
-}
-
-.clearfix{
-    clear: both;
 }
 
 
@@ -130,3 +132,17 @@ body{
     padding: 15px;
     margin-top: 250px;
 }
+
+.logo_container{
+    text-align: center;
+}
+
+
+.frm_logo{
+    width: 60%;
+}
+
+.clearfix{
+    clear: both;
+}
+

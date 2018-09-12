@@ -18,11 +18,19 @@
     <?php 
         if(!isset($_GET['section'])){
             require 'views/home.php';
+
         }elseif(
             isset($_GET['section']) && 
             $_GET['section'] == "post"
+
         ){
             require 'views/post.php';
+        }elseif(
+            isset($_GET['section']) && 
+            $_GET['section'] == "register"
+            
+        ){
+            require 'views/register.php';
         }
     ?>
 
