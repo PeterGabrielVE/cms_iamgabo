@@ -10,36 +10,19 @@
     <div class="sixteen wide column">
         <h2 style="text-align:center">Publicaciones Recientes</h2>
     </div>
-    <a href="#" class="four wide column ">
-    <div class="post_container">
-        <img src="https://via.placeholder.com/1280x720" class="post_img" alt="Img Prueba">
-        <h2 class="post_title">Name</h2>
-        <p class="post_date">06-09-2018</p>
-    </div>
-    </a>
 
-     <a href="#" class="four wide column ">
-    <div class="post_container">
-        <img src="https://via.placeholder.com/1280x720" class="post_img" alt="Img Prueba">
-        <h2 class="post_title">Name</h2>
-        <p class="post_date">06-09-2018</p>
-    </div>
-    </a>
+    <?php foreach($posts as $post): ?>
+        <a href="post/<?php echo $post['post_id']; ?>" class="four wide column">
+            <div class="post_container">
+                <img src="res/img/img_posts/<?php  echo $post['img_post']; ?>.png" class="post_img" alt="<?php echo $post['name'] ?>">
+                <h2  align="center" class="post_title"><?php echo $post['name']; ?></h2>
+                <p align="center" class="post_date"><?php echo date("d-m-Y", $post['created_at']); ?></p>
+             </div>
+        </a>
+    <?php endforeach ?>
 
-     <a href="#" class="four wide column ">
-    <div class="post_container">
-        <img src="https://via.placeholder.com/1280x720" class="post_img" alt="Img Prueba">
-        <h2 class="post_title">Name</h2>
-        <p class="post_date">06-09-2018</p>
-    </div>
-    </a>
+     
 
-     <a href="#" class="four wide column ">
-    <div class="post_container">
-        <img src="https://via.placeholder.com/1280x720" class="post_img" alt="Img Prueba">
-        <h2 class="post_title">Name</h2>
-        <p class="post_date">06-09-2018</p>
-    </div>
-    </a>
+     
 </div>
 

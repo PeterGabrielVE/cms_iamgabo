@@ -3,6 +3,21 @@
     require 'init.php';
 
     class User_Actions{
+        public function getRecentPosts(){
+            global $database;
+
+            $posts = $database -> select("posts", [
+                "post_id",
+                "name",
+                "img_post",
+                "created_at"
+            ], [
+                "ORDER" => ["posts.post_id" => "DESC"],
+                "LIMIT" => "8"
+            ]);
+
+            return $posts;
+        }
 
     };
 

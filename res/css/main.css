@@ -42,10 +42,11 @@ body{
     width: 100%;
 }
 
-.post_title,post_date{
+.post_title,.post_date{
     width: 100px;
     text-align: center;
     margin-top: 5px;
+    
 }
 
 
